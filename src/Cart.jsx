@@ -3,6 +3,7 @@ import {getProductData} from './api';
 import {Link, Navigate} from 'react-router-dom'
 import Loading from './Loading';
 import CartRow from './CartRow';
+import CartCards from './CartCards';
 import EmptyCart from './EmptyCart';
 import Button from './Button';
 import BackButton from './BackButton';
@@ -50,9 +51,8 @@ function Cart({cart, updateCart}) {
       <div className="bg-gray-200 md:py-1 min-h-screen">
         <div className="sm:max-w-6xl sm:mx-auto "><BackButton to="/"></BackButton></div>
         <div className="p-8 lg:max-w-6xl lg:mx-auto mx-8 bg-white rounded">
-          {/* <h1 className="text-xl my-4 sans-serif">Account Name : </h1> */}
     <div>
-      <table className="border w-full">
+      <table className="border w-full hidden md:table">
           <thead>
              <tr className="border bg-gray-300">
                 <th className="p-2"></th>
@@ -79,6 +79,20 @@ function Cart({cart, updateCart}) {
                   })}
              </tbody>
            </table>
+           <div className="max-w-80 flex gap-2 flex-wrap md:hidden">
+      {cart.map(function(cartItem){
+           return <CartCards 
+                    key={cartItem.product.title}
+                     thumbnail={cartItem.thumbnail}
+                     price={cartItem.product.price}
+                     noOfProduct={quantityMap[cartItem.product.id] || cartItem.quantity}
+                     title={cartItem.product.title}
+                     id={cartItem.product.id}
+                     onQuantityChange={handleQuantityChange}
+                     onRemove={handleRemove}
+                     updateCartCheckout={handleUpdateCart}
+                />
+             })}</div>
            <div className="my-4 flex flex-col sm:flex-row-reverse w-full gap-4 justify-between">
              <button onClick={handleUpdateCartClick} className="hover:bg-rose-500 bg-gray-400 text-white px-4 py-1 rounded-md font-semibold justify-self-end md:my-0">UPDATE CART</button>  
           <div className="sm:flex-row gap-4 flex flex-col"> <input className="border p-1" placeholder="Coupon Code"></input>
