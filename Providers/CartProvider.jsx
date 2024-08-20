@@ -20,12 +20,12 @@ function CartProvider({children, isLoggedIn }){
 
 
   function quantityMapToCart(quantityMap){
-
-      getProductByIds(Object.keys(quantityMap)).then(function(products){
+    if(quantityMap){
+       getProductByIds(Object.keys(quantityMap)).then(function(products){
         const savedCart = products.map((p) => ({ product: p, quantity: quantityMap[p.id]}));
         setCart(savedCart);
         });
-
+    }
   }
   
   function addToCart(productId, count){
@@ -50,8 +50,6 @@ function CartProvider({children, isLoggedIn }){
     }
   }
 
-  
-  
     const cartCount = cart.reduce(function(prev, curr){
       return prev + curr.quantity;
     },0);
