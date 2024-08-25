@@ -1,6 +1,11 @@
-import React from 'react';
+import {useEffect} from 'react';
 import {Link} from 'react-router-dom'
-function ThankYouPage(){
+import {withCart} from './withProvider';
+
+function ThankYouPage({updateCart}){
+  useEffect(function(){
+    updateCart({});
+  },[]);
   return(
     <div className="flex flex-col justify-center items-center py-2 min-h-screen gap-4">
       <img className="md:w-80 w-40 mb-8" src="https://static.vecteezy.com/system/resources/previews/011/049/143/non_2x/e-commerce-mobile-shopping-illustration-vector.jpg"/>
@@ -11,4 +16,4 @@ function ThankYouPage(){
 
   );
 }
-export default ThankYouPage;
+export default withCart(ThankYouPage);
