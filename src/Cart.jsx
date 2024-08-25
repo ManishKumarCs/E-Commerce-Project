@@ -105,11 +105,11 @@ function Cart({cart, updateCart}) {
          <div className="p-2 flex flex-col">
            <div className="p-2 border-b flex justify-between">
              <h4>Subtotal</h4>
-             <span className="px-8">{totalPrice}</span>
+             <span className="px-8">Rs. {totalPrice}.00</span>
            </div>
            <div className="p-2 border-b flex justify-between">
              <h4>Total</h4>
-             <span className="px-8">{totalPrice}</span>
+             <span className="px-8">Rs. {totalPrice}.00</span>
            </div>
             <Link className="bg-rose-500 hover:bg-rose-600 text-white px-4 py-1 rounded-md font-semibold m-2 text-center" to="/thankyou">PROCEED TO CHECKOUT</Link>
          </div>
