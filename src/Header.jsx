@@ -21,7 +21,7 @@ function Header({cartCount, setUser, setAlert,cart}) {
   }
   return (
     <div className="flex justify-between max-w-6xl mx-auto py-1 gap-16 bg-white md:max-h-16 my-2 px-6 md:px-2">
-     <img className="md:w-2/12 w-3/12 object-cover" src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo-640x400.png"/> 
+     <img className="md:w-2/12 w-3/12 object-cover" src="https://i.pinimg.com/originals/9e/cd/f6/9ecdf63bd49055a132a7d091712d7486.jpg"/> 
       <div className="flex items-center gap-4">
        <Link onMouseOver={handleHover} onMouseOut={handleHoverOut} className="hover:border-b-2 border-rose-500 relative pb-2" to="/cart">
          {cartCount>0 && <div className=" border-2 border-white bg-rose-600 px-2 text-white absolute -top-2 -right-2 rounded-full">{cartCount}</div>}
