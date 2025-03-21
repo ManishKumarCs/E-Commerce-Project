@@ -13,6 +13,7 @@
     "autoprefixer": "^10.4.2",
     "axios": "^1.7.2",
     "formik": "^2.4.6",
+    "install": "^0.13.0",
     "lodash": "^4.17.21",
     "postcss": "^8.4.5",
     "react": "^17.0.2",

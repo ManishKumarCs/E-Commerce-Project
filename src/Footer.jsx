@@ -1,33 +1,34 @@
 import React from 'react';
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaXTwitter } from "react-icons/fa6";
-
 
 function Footer() {
   return (
-    <div className="flex flex-col items-center gap-1 py-1 bg-gray-700 text-white">
+    <footer className="bg-gray-800 text-white py-6">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+        
+        {/* Social Icons */}
+        <div className="flex gap-6 text-2xl">
+          <a href="#" className="hover:text-blue-500 transition"><FaFacebook /></a>
+          <a href="#" className="hover:text-pink-500 transition"><AiFillInstagram /></a>
+          <a href="#" className="hover:text-gray-400 transition"><FaXTwitter /></a>
+        </div>
 
-      <div className="flex gap-8 mt-2 max-w-6xl mx-auto">
-      <a href="#"><FaFacebook className="text-2xl"/></a>
-      <a href="#"><AiFillInstagram className="text-2xl"/></a>
-      <a href="#"><FaXTwitter className="text-2xl"/></a>
-      <a href="#"></a>
-      </div>
+        {/* Links */}
+        <ul className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
+          <li><a href="#" className="hover:underline">Contact Us</a></li>
+          <li><a href="#" className="hover:underline">Our Services</a></li>
+          <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+          <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
+          <li><a href="#" className="hover:underline">Career</a></li>
+        </ul>
 
-      <div>
-      <ul className="flex gap-4">
-      <li><a href="#">Contact us</a></li>
-      <li><a href="#">Our Services</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms & Conditions</a></li>
-      <li><a href="#">Career</a></li>
-      </ul>
+        {/* Copyright */}
+        <p className="text-center text-sm md:text-base mt-2">
+          © 2024 SWIFTCART - All Rights Reserved | Designed By: <span className="font-semibold">Manish Kumar</span>
+        </p>
       </div>
-      <p className="justify-center">
-      SWIFTCART Copyright © 2024 - All rights reserved || Designed By: MANISH KUMAR 
-      </p>
-    </div>
+    </footer>
   );
 }
 

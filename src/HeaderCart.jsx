@@ -1,17 +1,21 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
-
-function HeaderCart({product, quantity}) {
- 
+function HeaderCart({ product, quantity }) {
   return (
-           <div className="py-2 px-6 flex w-60 border-b-2 border-black rounded">
-              <img className="object-cover w-16" src="https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png" />
-              <div className="flex flex-col justify-center gap-auto">
-                <h1 className="font-semibold text-rose-500">{product.title}</h1>
-                <h3 className="font-semibold text-rose-500">Total Items : {quantity}</h3>
-              </div>
-            </div>
+    <div className="fixed top-16 right-20 z-50 bg-white shadow-lg rounded-lg p-4 flex items-center w-64 border border-gray-300">
+      <img 
+        className="w-16 h-16 rounded-lg border p-1 object-cover" 
+        src="https://cdn.pixabay.com/photo/2018/10/29/15/31/laptop-3781384_1280.jpg" 
+        alt={product.title} 
+      />
+      <div className="ml-1 flex flex-col justify-center">
+        <h1 className="font-semibold text-gray-800">{product.title}</h1>
+        <h3 className="text-sm text-gray-600">Total Items: 
+          <span className="text-rose-500 font-bold"> {quantity}</span>
+        </h3>
+      </div>
+    </div>
   );
 }
 
-export default (HeaderCart);
+export default HeaderCart;
